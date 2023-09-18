@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+    <h1>Error</h1>
+    <p>
+        There is no entry found in the Encyclopedia.<br>
+        You can create it by clicking <a href="{% url 'editor' %}">here</a>
+    </p>
+
+
+
+{% endblock %}

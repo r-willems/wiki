@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Page Editor
+{% endblock %}
+
+{% block body %}
+    <h1>New Entry</h1>
+
+    <form id="formArea" method="post" action="{% url 'submit' %}">
+        {% csrf_token %}
+        <div id="topArea">
+            <label for="titleBox"><h3>Title:</h3></label>
+            <input name="titleBox" {{ able_title }} autocomplete="off" type="text" value="{{ title }}">
+            <input id="saveBtn" type="submit">
+            <input hidden name="creatingNew" value="{{ edit_bool }}">
+        </div>
+        <textarea name="textBox">{{ text }}</textarea>
+
+    </form>
+
+{% endblock %}
